@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Projektarbeit.PersonalisiertesBuch">
+  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="14" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="645" height="537"/>
+    </constraints>
+    <properties>
+      <background color="-408577"/>
+      <foreground color="-12349419"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="3c7c6" class="javax.swing.JLabel" binding="JLabelName">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="33" height="40"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="       Bücher"/>
+        </properties>
+      </component>
+      <component id="c4285" class="javax.swing.JLabel" binding="JlabelCover">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Cover"/>
+        </properties>
+      </component>
+      <component id="626bd" class="javax.swing.JTextField" binding="textFieldFür">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="56b4e" class="javax.swing.JRadioButton" binding="rBHard">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Hard Cover"/>
+        </properties>
+      </component>
+      <component id="6f6fa" class="javax.swing.JRadioButton" binding="rBSoft">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Soft Cover"/>
+        </properties>
+      </component>
+      <component id="a91a1" class="javax.swing.JLabel" binding="JLabelCh1">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="4" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="70" height="39"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Charakter 1"/>
+        </properties>
+      </component>
+      <component id="e91a" class="javax.swing.JLabel" binding="JLabelCh1Name">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="4" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="       Name"/>
+        </properties>
+      </component>
+      <component id="8e6c3" class="javax.swing.JTextField" binding="textFieldCh1Name">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="201" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="767c" class="javax.swing.JLabel" binding="JLabelCh2Name">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Name"/>
+        </properties>
+      </component>
+      <component id="dd9a5" class="javax.swing.JTextField" binding="textFieldCh2Name">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="ffc4a" class="javax.swing.JLabel" binding="JLabelCh1Alter">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="       Alter"/>
+        </properties>
+      </component>
+      <component id="5949d" class="javax.swing.JTextField" binding="textFieldCh1Alter">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="201" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="89af8" class="javax.swing.JLabel" binding="JLabelCh2Alter">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Alter"/>
+        </properties>
+      </component>
+      <component id="63d1" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+        <constraints>
+          <grid row="7" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="d7a1f" class="javax.swing.JLabel" binding="JLabelCh1Geschlecht">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="       Geschlecht"/>
+        </properties>
+      </component>
+      <component id="3fab1" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="cbf2" class="javax.swing.JComboBox" binding="comboBoxCh1Geschlecht">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="201" height="34"/>
+          </grid>
+        </constraints>
+        <properties>
+          <model>
+            <item value="weiblich"/>
+            <item value="männlich"/>
+          </model>
+        </properties>
+      </component>
+      <component id="147e4" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="weiblich"/>
+            <item value="männlich"/>
+          </model>
+        </properties>
+      </component>
+      <component id="5ebeb" class="javax.swing.JRadioButton" binding="radioButtonMagisch1">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="201" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="magische Kräfte"/>
+        </properties>
+      </component>
+      <component id="49db1" class="javax.swing.JRadioButton" binding="radioButtonMagisch2">
+        <constraints>
+          <grid row="9" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="magische Kräfte"/>
+        </properties>
+      </component>
+      <component id="18be0" class="javax.swing.JLabel" binding="JLabelFür">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="       Für"/>
+        </properties>
+      </component>
+      <component id="5cff5" class="javax.swing.JTextField" binding="textFieldGravur">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="2514a" class="javax.swing.JLabel" binding="JLabelGravur">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="       Gravur"/>
+        </properties>
+      </component>
+      <component id="37be4" class="javax.swing.JComboBox" binding="comboBoxStoryline">
+        <constraints>
+          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="4" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="Abenteuer"/>
+            <item value="Love Story"/>
+            <item value="Comedy"/>
+          </model>
+        </properties>
+      </component>
+      <component id="fdbba" class="javax.swing.JLabel" binding="JLabelCh2">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="72" height="39"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Charakter 2"/>
+        </properties>
+      </component>
+      <component id="222bb" class="javax.swing.JLabel" binding="JLabelStoryline">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="54" height="47"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Storyline"/>
+        </properties>
+      </component>
+      <component id="9626e" class="javax.swing.JButton" binding="buttonBestellen">
+        <constraints>
+          <grid row="13" column="4" row-span="1" col-span="2" vsize-policy="4" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="20" height="10"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-12150251"/>
+          <text value="Bestellen"/>
+        </properties>
+      </component>
+      <component id="a952b" class="javax.swing.JLabel" binding="JLabelGeschenk">
+        <constraints>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="201" height="17"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-3200283"/>
+          <text value="Geschenk"/>
+        </properties>
+      </component>
+      <component id="a404e" class="javax.swing.JTextField" binding="textFieldLesezeichen">
+        <constraints>
+          <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="201" height="34"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Lesezeichen"/>
+        </properties>
+      </component>
+      <component id="befac" class="javax.swing.JTextField" binding="textFieldPreis">
+        <constraints>
+          <grid row="11" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="92973" class="javax.swing.JTextField" binding="textFieldWrenkorb">
+        <constraints>
+          <grid row="12" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="a224" class="javax.swing.JButton" binding="buttonPreis">
+        <constraints>
+          <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Preis"/>
+        </properties>
+      </component>
+      <component id="6f9b2" class="javax.swing.JButton" binding="buttonWarenkorb">
+        <constraints>
+          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Warenkorb"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
