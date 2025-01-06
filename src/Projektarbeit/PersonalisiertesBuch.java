@@ -71,6 +71,15 @@ public class PersonalisiertesBuch {
             }
         });
 textFieldPreis.setEditable(false);
+
+buttonBestellen.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        zeigeBestellübersicht();
+    }
+});
+
+
     }
  private void berechnePreis(){
         double preis = 10.0;
@@ -89,8 +98,35 @@ textFieldPreis.setEditable(false);
         textFieldPreis.setText( preis + " €");
 
  }
+private void zeigeBestellübersicht() {
+        JFrame bestellübersichtFrame = new JFrame("Bestellübersicht");
 
-    public static void main(String[] args) {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        String nameFür = textFieldFür.getText();
+        String gravur = textFieldGravur.getText();
+        String covertyp = rBHard.isSelected() ? "Hard Cover" : "Soft Cover";
+        String storyline = (String) comboBoxStoryline.getSelectedItem();
+        String preis = textFieldPreis.getText();
+
+        panel.add(new JLabel("Bestellübersicht"));
+        panel.add(new JLabel("Für:" + nameFür));
+        panel.add(new JLabel("Gravur:" + gravur));
+        panel.add(new JLabel("Cover:" + covertyp));
+        panel.add(new JLabel("Storyline:" + storyline));
+        panel.add(new JLabel("Preis:" + preis));
+
+        JButton schließenButton = new JButton("Schließen");
+        schließenButton.addActionListener(e -> bestellübersichtFrame.dispose());
+        panel.add(schließenButton);
+
+        bestellübersichtFrame.add(panel);
+        bestellübersichtFrame.setSize(300,200);
+        bestellübersichtFrame.setLocationRelativeTo(null);
+        bestellübersichtFrame.setVisible(true);
+
+}
+public static void main(String[] args) {
         SwingUtilities.invokeLater(()-> {
 
             JFrame frame = new JFrame("Personalisierte Buchpreisberechnung");
