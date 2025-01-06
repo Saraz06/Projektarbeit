@@ -10,7 +10,8 @@ public class PersonalisiertesBuch {
     private JPanel panelMain;
 
     private JTextField textFieldFür;
-    private JTextField textFieldGravur;
+    private JComboBox<String> ComboBoxGravur1;
+    private JComboBox<String>ComboboxGravur2;
     private JRadioButton rBHard;
     private JRadioButton rBSoft;
     private JTextField textFieldCh1Name;
@@ -22,8 +23,6 @@ public class PersonalisiertesBuch {
     private JTextField TextFieldGravur;
     private JComboBox<String>comboBoxStoryline;
     private JLabel labelPreis;
-    private JRadioButton RBM1;
-    private JRadioButton RBM2;
     private JLabel JLabelName;
     private JLabel JlabelCover;
     private JLabel JLabelFür;
@@ -45,8 +44,10 @@ public class PersonalisiertesBuch {
     private JRadioButton buttonCover;
     private JRadioButton ButtonCover2;
     private JTextField textFieldPreis;
-
-
+    private JComboBox comboBoxGravur1;
+    private JComboBox comboBoxGravur2;
+    private JCheckBox checkBox1MK;
+    private JCheckBox checkBox2MK;
 
 
     public PersonalisiertesBuch(){
@@ -60,6 +61,18 @@ public class PersonalisiertesBuch {
 
         coverGroup.add(rBHard);
         coverGroup.add(rBSoft);
+
+        checkBox1MK = new JCheckBox("Magische Kraft 1");
+        checkBox2MK = new JCheckBox("Magische Kraft 2");
+
+
+        for (char c = 'A'; c <= 'Z'; c++) {
+            comboBoxGravur1.addItem(String.valueOf(c));
+            comboBoxGravur2.addItem(String.valueOf(c));
+        }
+
+        comboBoxGravur1.setSelectedIndex(0);
+        comboBoxGravur2.setSelectedIndex(0);
 
 
 
@@ -76,6 +89,13 @@ buttonBestellen.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
         zeigeBestellübersicht();
+        buttonBestellen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+            }
+        });
     }
 });
 
@@ -87,14 +107,25 @@ buttonBestellen.addActionListener(new ActionListener() {
         if (rBHard.isSelected()){
             preis += 5.0;
         }
-        String gravur = textFieldGravur.getText();
-        if (!gravur.isEmpty()){
+        String gravur1 = (String) comboBoxGravur1.getSelectedItem();
+        String gravur2 = (String) comboBoxGravur2.getSelectedItem();
+
+        String gravur = gravur1 + "." + gravur2;
+
+        if (!gravur1.isEmpty() || !gravur2.isEmpty()) {
             preis += 2.0;
         }
         String storyline = (String) comboBoxStoryline.getSelectedItem();
         if ("Comedy".equals(storyline)){
             preis += 4.0;
         }
+        if (checkBox1MK.isSelected()) {
+            preis += 3.0;
+        }
+        if (checkBox2MK.isSelected()) {
+            preis += 3.0;
+        }
+
         textFieldPreis.setText( preis + " €");
 
  }
@@ -104,16 +135,38 @@ private void zeigeBestellübersicht() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         String nameFür = textFieldFür.getText();
-        String gravur = textFieldGravur.getText();
+        String gravur1 = (String)comboBoxGravur1.getSelectedItem();
+        String gravur2 = (String) comboBoxGravur2.getSelectedItem();
         String covertyp = rBHard.isSelected() ? "Hard Cover" : "Soft Cover";
         String storyline = (String) comboBoxStoryline.getSelectedItem();
         String preis = textFieldPreis.getText();
+    String magischeKräfte = "";
+    if (checkBox1MK.isSelected()) {
+        magischeKräfte += "Magische Kraft 1";
+    }
+    if (checkBox2MK.isSelected()) {
+        if (!magischeKräfte.isEmpty()) {
+            magischeKräfte += ", "; // Komma hinzufügen, wenn bereits eine Kraft vorhanden ist
+        }
+        magischeKräfte += "Magische Kraft 2";
+    }
+
+    // Wenn keine magischen Kräfte ausgewählt wurden
+    if (magischeKräfte.isEmpty()) {
+        magischeKräfte = "Keine";
+    }
+
+
+
+
+
 
         panel.add(new JLabel("Bestellübersicht"));
         panel.add(new JLabel("Für:" + nameFür));
-        panel.add(new JLabel("Gravur:" + gravur));
+        panel.add(new JLabel("Gravur:" + gravur1 +  "." + gravur2));
         panel.add(new JLabel("Cover:" + covertyp));
         panel.add(new JLabel("Storyline:" + storyline));
+        panel.add(new JLabel("Magische Kräfte: "+ magischeKräfte));
         panel.add(new JLabel("Preis:" + preis));
 
         JButton schließenButton = new JButton("Schließen");
