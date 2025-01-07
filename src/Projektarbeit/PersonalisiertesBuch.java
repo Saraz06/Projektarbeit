@@ -18,7 +18,6 @@ public class PersonalisiertesBuch {
     private JRadioButton rBHard;
     private JRadioButton rBSoft;
     private JLabel JlabelCover;
-    private JLabel JLabelFuer;
     private JLabel JLabelGravur;
     private JLabel JLabelCh1;
     private JLabel JLabelCh2;
@@ -32,6 +31,7 @@ public class PersonalisiertesBuch {
     private JButton buttonBestellen;
     private JLabel JLabelGeschenk;
     private JTextField textFieldLesezeichen;
+    private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
     private JTextField textFieldWrenkorb;
     private JButton buttonPreis;
@@ -130,7 +130,7 @@ public class PersonalisiertesBuch {
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        String nameFür = JLabelFuer.getText();
+        String nameFür = JtextFieldFuer.getText();
         String gravur1 = (String) comboBox1.getSelectedItem();
         String gravur2 = (String) comboBox3.getSelectedItem();
         String covertyp = rBHard.isSelected() ? "Hard Cover" : "Soft Cover";

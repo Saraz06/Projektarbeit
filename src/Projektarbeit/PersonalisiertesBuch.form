@@ -21,7 +21,7 @@
           <text value="Cover"/>
         </properties>
       </component>
-      <component id="626bd" class="javax.swing.JTextField" binding="textFieldFuer">
+      <component id="626bd" class="javax.swing.JTextField" binding="JtextFieldFuer">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
