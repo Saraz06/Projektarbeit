@@ -147,7 +147,7 @@ public class PersonalisiertesBuch {
             magischeKraefte += "Magische Kraft 2";
         }
 
-        // Wenn keine magischen Kräfte ausgewählt wurden
+        // Wenn keine magischen Kräfte ausgewählt wurden 
         if (magischeKraefte.isEmpty()) {
             magischeKraefte = "Keine";
         }
