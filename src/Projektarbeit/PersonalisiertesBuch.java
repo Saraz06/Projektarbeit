@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PersonalisiertesBuch {
+public class PersonalisiertesBuch extends JFrame {
 
     private JPanel panelMain;
 
@@ -31,7 +31,6 @@ public class PersonalisiertesBuch {
     private JComboBox comboBoxStoryline;
     private JButton buttonBestellen;
     private JLabel JLabelGeschenk;
-    private JTextField textFieldLesezeichen;
     private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
     private JTextField textFieldWrenkorb;
@@ -50,6 +49,13 @@ public class PersonalisiertesBuch {
 
 
     public PersonalisiertesBuch(){
+
+
+        setTitle("Personalisiere dein Buch");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 600);
+        setContentPane(frame);
+        setVisible(true);
 
 
         rBHard = new JRadioButton("Hard Cover");
@@ -100,6 +106,15 @@ public class PersonalisiertesBuch {
         });
 
 
+
+        JLabelGeschenk.setVisible(false);
+
+        buttonBestellen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabelGeschenk.setVisible(true);
+            }
+        });
     }
     private void berechnePreis(){
         double preis = 10.0;
@@ -159,8 +174,6 @@ public class PersonalisiertesBuch {
 
 
 
-
-
         panel.add(new JLabel("Bestellübersicht"));
         panel.add(new JLabel("Gravur:" + gravur1 +  "." + gravur2));
         panel.add(new JLabel("Cover:" + covertyp));
@@ -179,17 +192,17 @@ public class PersonalisiertesBuch {
 
     }
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(()-> {
+       /* SwingUtilities.invokeLater(()-> {
 
             JFrame frame = new JFrame("Personalisierte Buchpreisberechnung");
             PersonalisiertesBuch personalisiertesBuch = new PersonalisiertesBuch();
 
             frame.setContentPane(personalisiertesBuch.panelMain);
 
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
-        });
+        });*/
+        new PersonalisiertesBuch();
     }
 
 
