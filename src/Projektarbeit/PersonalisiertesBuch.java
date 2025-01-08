@@ -23,10 +23,11 @@ public class PersonalisiertesBuch {
     private JLabel JLabelCh2;
     private JLabel JLabelCh1Name;
     private JLabel JLabelCh2Name;
-    private JLabel JLabelCh1Alter;
     private JLabel JLabelCh2Alter;
+    private JLabel JLabelCh1Alter;
     private JLabel JLabelCh1Geschlecht;
     private JLabel JLabelStoryline;
+    private JLabel JLabelFuer;
     private JComboBox comboBoxStoryline;
     private JButton buttonBestellen;
     private JLabel JLabelGeschenk;
@@ -34,19 +35,22 @@ public class PersonalisiertesBuch {
     private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
     private JTextField textFieldWrenkorb;
+    private JTextField textFieldCh2Alter;
     private JButton buttonPreis;
     private JButton buttonWarenkorb;
     private JRadioButton buttonCover;
     private JRadioButton ButtonCover2;
     private JLabel JLabelCh2Geschlecht;
-    private JComboBox comboBox1;
-    private JComboBox comboBox3;
+    private JComboBox comboBoxGravur1;
+    private JComboBox comboBoxGravur2;
     private JPanel frame;
     private JCheckBox checkBox1MK;
     private JCheckBox checkBox2MK;
 
 
+
     public PersonalisiertesBuch(){
+
 
         rBHard = new JRadioButton("Hard Cover");
         rBSoft = new JRadioButton(" Soft Cover");
@@ -63,12 +67,12 @@ public class PersonalisiertesBuch {
 
 
         for (char c = 'A'; c <= 'Z'; c++) {
-            comboBox1.addItem(String.valueOf(c));
-            comboBox3.addItem(String.valueOf(c));
+            comboBoxGravur1.addItem(String.valueOf(c));
+            comboBoxGravur2.addItem(String.valueOf(c));
         }
 
-        comboBox1.setSelectedIndex(0);
-        comboBox3.setSelectedIndex(0);
+        comboBoxGravur1.setSelectedIndex(0);
+        comboBoxGravur2.setSelectedIndex(0);
 
 
 
@@ -103,8 +107,8 @@ public class PersonalisiertesBuch {
         if (rBHard.isSelected()){
             preis += 5.0;
         }
-        String gravur1 = (String) comboBox1.getSelectedItem();
-        String gravur2 = (String) comboBox3.getSelectedItem();
+        String gravur1 = (String) comboBoxGravur1.getSelectedItem();
+        String gravur2 = (String) comboBoxGravur2.getSelectedItem();
 
         String gravur = gravur1 + "." + gravur2;
 
@@ -131,8 +135,8 @@ public class PersonalisiertesBuch {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         String nameFuer = JtextFieldFuer.getText();
-        String gravur1 = (String) comboBox1.getSelectedItem();
-        String gravur2 = (String) comboBox3.getSelectedItem();
+        String gravur1 = (String) comboBoxGravur1.getSelectedItem();
+        String gravur2 = (String) comboBoxGravur2.getSelectedItem();
         String covertyp = rBHard.isSelected() ? "Hard Cover" : "Soft Cover";
         String storyline = (String) comboBoxStoryline.getSelectedItem();
         String preis = textFieldPreis.getText();
