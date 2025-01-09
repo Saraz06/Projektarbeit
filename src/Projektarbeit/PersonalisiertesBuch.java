@@ -10,7 +10,6 @@ public class PersonalisiertesBuch extends JFrame {
 
     private JTextField textFieldCh1Name;
     private JTextField textFieldCh2Name;
-    private JTextField textFieldCh1Alter;
     private JTextField textField6;
     private JComboBox comboBoxCh1Geschlecht;
     private JComboBox comboBox2;
@@ -34,7 +33,6 @@ public class PersonalisiertesBuch extends JFrame {
     private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
     private JTextField textFieldWrenkorb;
-    private JTextField textFieldCh2Alter;
     private JButton buttonPreis;
     private JButton buttonWarenkorb;
     private JRadioButton buttonCover;
@@ -45,7 +43,8 @@ public class PersonalisiertesBuch extends JFrame {
     private JPanel frame;
     private JCheckBox checkBox1MK;
     private JCheckBox checkBox2MK;
-
+    private JComboBox comboBox1;
+    private JComboBox comboBox3;
 
 
     public PersonalisiertesBuch(){
@@ -53,7 +52,7 @@ public class PersonalisiertesBuch extends JFrame {
 
         setTitle("Personalisiere dein Buch");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 600);
+        setSize(700, 600);
         setContentPane(frame);
         setVisible(true);
 
