@@ -57,28 +57,11 @@ public class PersonalisiertesBuch extends JFrame {
         setVisible(true);
 
 
-        rBHard = new JRadioButton("Hard Cover");
-        rBSoft = new JRadioButton(" Soft Cover");
-
-
 
         ButtonGroup coverGroup = new ButtonGroup();
 
         coverGroup.add(rBHard);
         coverGroup.add(rBSoft);
-
-        checkBox1MK = new JCheckBox("Magische Kraft 1");
-        checkBox2MK = new JCheckBox("Magische Kraft 2");
-
-
-        for (char c = 'A'; c <= 'Z'; c++) {
-            comboBoxGravur1.addItem(String.valueOf(c));
-            comboBoxGravur2.addItem(String.valueOf(c));
-        }
-
-        comboBoxGravur1.setSelectedIndex(0);
-        comboBoxGravur2.setSelectedIndex(0);
-
 
 
         buttonPreis.addActionListener(new ActionListener() {
@@ -88,7 +71,6 @@ public class PersonalisiertesBuch extends JFrame {
 
             }
         });
-        textFieldPreis.setEditable(false);
 
         buttonBestellen.addActionListener(new ActionListener() {
             @Override
@@ -121,14 +103,7 @@ public class PersonalisiertesBuch extends JFrame {
         if (rBHard.isSelected()){
             preis += 5.0;
         }
-        String gravur1 = (String) comboBoxGravur1.getSelectedItem();
-        String gravur2 = (String) comboBoxGravur2.getSelectedItem();
 
-        String gravur = gravur1 + "." + gravur2;
-
-        if (!gravur1.isEmpty() || !gravur2.isEmpty()) {
-            preis += 2.0;
-        }
         String storyline = (String) comboBoxStoryline.getSelectedItem();
         if ("Comedy".equals(storyline)){
             preis += 4.0;

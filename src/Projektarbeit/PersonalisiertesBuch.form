@@ -169,7 +169,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
       <component id="92973" class="javax.swing.JTextField" binding="textFieldWrenkorb">
         <constraints>
@@ -367,7 +369,7 @@
         </constraints>
         <properties>
           <model>
-            <item value="  "/>
+            <item value=""/>
             <item value="0"/>
             <item value="1"/>
             <item value="2"/>
@@ -480,7 +482,7 @@
         </constraints>
         <properties>
           <model>
-            <item value="  "/>
+            <item value=""/>
             <item value="0"/>
             <item value="1"/>
             <item value="2"/>
