@@ -600,41 +600,5 @@
     </group>
   </buttonGroups>
 </form>
-    private String name;
-    private int alter;
-    private String geschlecht;
-    private String gravur;
-    private String coverart;
-    private String storyline;
-    private String magischekraefte;
-
-    // Konstruktor
-    public Bestellung(String name, int alter, String geschlecht, String gravur, String coverart, String storyline, String magischekraefte) {
-        this.name = name;
-        this.alter = alter;
-        this.geschlecht = geschlecht;
-        this.gravur = gravur;
-        this.coverart = coverart;
-        this.storyline = storyline;
-        this.magischekraefte = magischekraefte;
-    }
-
-    // Methode zur Überprüfung der Bestellung
-    public boolean istBestellungGueltig() {
-        return name != null && !name.isEmpty() &&
-                alter > 0 &&
-                geschlecht != null && !geschlecht.isEmpty() &&
-                gravur != null && !gravur.isEmpty() &&
-                coverart != null && !coverart.isEmpty() &&
-                storyline != null && !storyline.isEmpty() &&
-                magischekraefte != null && !magischekraefte.isEmpty();
-    }
-
-    // Methode zum Bestellen
-    public void bestellen() {
-        if (istBestellungGueltig()) {
-            System.out.println("Bestellung erfolgreich! Dein Buch wird bestellt.");
-        } else {
-            System.out.println("Bestellung fehlgeschlagen! Bitte fülle alle Felder aus.");
         }
     }
