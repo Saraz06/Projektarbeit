@@ -47,7 +47,7 @@ public class PersonalisiertesBuch extends JFrame {
     private JComboBox comboBox3;
 
 
-    public PersonalisiertesBuch(){
+    public  PersonalisiertesBuch(){
 
 
         setTitle("Personalisiere dein Buch");
@@ -76,15 +76,18 @@ public class PersonalisiertesBuch extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 zeigeBestelluebersicht();
-                buttonBestellen.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
+                Warenanzahl();
+                Reset();
 
-
-                    }
-                });
             }
+
+
+
+
         });
+
+
+
 
 
 
@@ -94,9 +97,49 @@ public class PersonalisiertesBuch extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JLabelGeschenk.setVisible(true);
+
+
+
             }
         });
     }
+
+    //Anzahl an bestellten Bücher (Warenkorb)
+    private int anzahl = 0;
+
+
+    private void Warenanzahl() {
+        anzahl +=1;
+
+
+        textFieldWrenkorb.setText (String.valueOf(anzahl));
+
+    }
+
+    private void Reset() {
+        JtextFieldFuer.setText("");
+        comboBoxGravur1.setSelectedIndex(0);
+        comboBoxGravur2.setSelectedIndex(0);
+        rBHard.setSelected(false);
+        rBSoft.setSelected(true);
+        textFieldCh1Name.setText("");
+        textFieldCh2Name.setText("");
+        comboBox1.setSelectedIndex(0);
+        comboBoxStoryline.setSelectedIndex(0);
+        comboBoxCh1Geschlecht.setSelectedIndex(0);
+        comboBox3.setSelectedIndex(0);
+        comboBox2.setSelectedIndex(0);
+        checkBox1MK.setSelected(false);
+        checkBox2MK.setSelected(false);
+
+
+
+
+
+
+    }
+
+
     private void berechnePreis(){
         double preis = 10.0;
 
@@ -118,6 +161,13 @@ public class PersonalisiertesBuch extends JFrame {
         textFieldPreis.setText( preis + " €");
 
     }
+
+
+
+
+
+
+
     private void zeigeBestelluebersicht() {
         JFrame bestelluebersichtFrame = new JFrame("Bestellübersicht");
 
