@@ -3,8 +3,12 @@ package Projektarbeit;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-public class PersonalisiertesBuch extends JFrame {
+public class PersonalisiertesBuch extends JFrame  {
+    private ArrayList<Buch> buecherListe;
+    private double preis;
+    private JTextArea ausgabefeld;
 
     private JPanel panelMain;
 
@@ -12,7 +16,7 @@ public class PersonalisiertesBuch extends JFrame {
     private JTextField textFieldCh2Name;
     private JTextField textField6;
     private JComboBox comboBoxCh1Geschlecht;
-    private JComboBox comboBox2;
+    private JComboBox comboBoxCh2Geschlecht;
 
     private JRadioButton rBHard;
     private JRadioButton rBSoft;
@@ -28,33 +32,41 @@ public class PersonalisiertesBuch extends JFrame {
     private JLabel JLabelStoryline;
     private JLabel JLabelFuer;
     private JComboBox comboBoxStoryline;
-    private JButton buttonBestellen;
+    private JButton  buttonBestellen;
     private JLabel JLabelGeschenk;
     private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
-    private JTextField textFieldWrenkorb;
+    private JTextField textFieldWarenkorb;
     private JButton buttonPreis;
     private JButton buttonWarenkorb;
-    private JRadioButton buttonCover;
-    private JRadioButton ButtonCover2;
     private JLabel JLabelCh2Geschlecht;
     private JComboBox comboBoxGravur1;
     private JComboBox comboBoxGravur2;
     private JPanel frame;
     private JCheckBox checkBox1MK;
     private JCheckBox checkBox2MK;
-    private JComboBox comboBox1;
-    private JComboBox comboBox3;
+    private JTextField textFieldCh1Alter;
+    private JTextField textFieldCh2Alter;
+    private JButton buttonReset;
 
-
-    public PersonalisiertesBuch(){
-
-
+    public PersonalisiertesBuch() {
         setTitle("Personalisiere dein Buch");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(700, 600);
         setContentPane(frame);
         setVisible(true);
+
+        buecherListe = new ArrayList<>();
+
+        JLabelGeschenk.setVisible(false);
+
+        initObjekte();
+        buttonBestellen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                zeigeWarenkorb();
+            }
+        });
 
 
 
@@ -71,41 +83,75 @@ public class PersonalisiertesBuch extends JFrame {
 
             }
         });
-
-        buttonBestellen.addActionListener(new ActionListener() {
+        buttonReset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                zeigeBestelluebersicht();
-                buttonBestellen.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-
-
-                    }
-                });
-            }
-        });
-
-
-
-        JLabelGeschenk.setVisible(false);
-
-        buttonBestellen.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JLabelGeschenk.setVisible(true);
+                reset();
             }
         });
     }
-    private void berechnePreis(){
+
+    public void initObjekte() {
+        Buch b1 = new Buch("Tobias", "T.G", "Soft Cover", "Abenteuer", "Heinrich", 56, "Männlich", true, "Hugo", 23, "Weiblich", true,"19€");
+        buecherListe.add(b1);
+        Buch b2 = new Buch("Simon", "S.N", "Hard Cover", "Love Story", "Tom", 16, "Männlich", false, "Lena", 17, "Männlich", false, "15€");
+        buecherListe.add(b2);
+        Buch b3 = new Buch("Gustav", "G.G", "Soft Cover", "Comedy", "Franz", 43, "Männlich", false, "Böse Hexe", 76, "Weiblich", true, "20€");
+        buecherListe.add(b3);
+    }
+
+
+
+
+
+
+
+        //Anzahl an bestellten Bücher (Warenkorb)
+        int anzahl = 0;
+
+
+        public void warenanzahl() {
+            anzahl +=1;
+
+            textFieldWarenkorb.setText (String.valueOf(anzahl));
+        }
+
+        public void reset() {
+            JtextFieldFuer.setText("");
+            comboBoxGravur1.setSelectedIndex(0);
+            comboBoxGravur2.setSelectedIndex(0);
+            rBHard.setSelected(false);
+            rBSoft.setSelected(false);
+            textFieldCh1Name.setText("");
+            textFieldCh2Name.setText("");
+            textFieldCh1Alter.setText("");
+            comboBoxStoryline.setSelectedIndex(0);
+            comboBoxCh1Geschlecht.setSelectedIndex(0);
+            textFieldCh2Alter.setText("");
+            comboBoxCh2Geschlecht.setSelectedIndex(0);
+            checkBox1MK.setSelected(false);
+            checkBox2MK.setSelected(false);
+
+        }
+
+
+
+
+
+
+
+    public void berechnePreis() {
         double preis = 10.0;
 
-        if (rBHard.isSelected()){
+        if (rBHard.isSelected()) {
             preis += 5.0;
+        }
+        if (rBSoft.isSelected()) {
+            preis += 3.0;
         }
 
         String storyline = (String) comboBoxStoryline.getSelectedItem();
-        if ("Comedy".equals(storyline)){
+        if ("Comedy".equals(storyline)) {
             preis += 4.0;
         }
         if (checkBox1MK.isSelected()) {
@@ -115,29 +161,92 @@ public class PersonalisiertesBuch extends JFrame {
             preis += 3.0;
         }
 
-        textFieldPreis.setText( preis + " €");
+        textFieldPreis.setText(preis + " €");
 
     }
-    private void zeigeBestelluebersicht() {
-        JFrame bestelluebersichtFrame = new JFrame("Bestellübersicht");
+
+
+    public void zeigeWarenkorb() {
+        JFrame bestelluebersichtFrame = new JFrame("Warenkorb");
+
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        String nameFuer = JtextFieldFuer.getText();
-        String gravur1 = (String) comboBoxGravur1.getSelectedItem();
-        String gravur2 = (String) comboBoxGravur2.getSelectedItem();
-        String covertyp = rBHard.isSelected() ? "Hard Cover" : "Soft Cover";
-        String storyline = (String) comboBoxStoryline.getSelectedItem();
+        JScrollPane scrollpane = new JScrollPane();
+        panel.add(scrollpane);
+        String fuer = JtextFieldFuer.getText();
+        String gravur = comboBoxGravur1.getSelectedItem().toString() + "." + comboBoxGravur2.getSelectedItem().toString();
+        String cover = "";
         String preis = textFieldPreis.getText();
-        String magischeKraefte = "";
+
+
+        if (rBHard.isSelected()) {
+            cover = "Hard Cover";
+        } else if (rBSoft.isSelected())
+            cover = "Soft Cover";
+        if (cover.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Bitte einen Covertyp auswählen");
+            return;
+        }
+
+        String storyline = comboBoxStoryline.getSelectedItem().toString();
+        String ch1name = textFieldCh1Name.getText();
+        String ch2name = textFieldCh2Name.getText();
+        double ch1alter;
+        try {
+            ch1alter = Double.parseDouble(textFieldCh1Alter.getText());
+        } catch (NumberFormatException ex) {
+            if(textFieldCh1Alter.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Bitte alles ausfüllen");
+            }else{
+            JOptionPane.showMessageDialog(null, "Bitte als Altersangabe nur Zahlen eingeben");}
+            return;
+        }
+        double ch2alter;
+        try {
+            ch2alter = Double.parseDouble(textFieldCh2Alter.getText());
+        } catch (NumberFormatException ex) {
+            if(textFieldCh2Alter.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Bitte alles ausfüllen");
+            }else{
+            JOptionPane.showMessageDialog(null, "Bitte als Altersangabe nur Zahlen eingeben");}
+            return;
+        }
+
+        String ch1geschlecht = comboBoxCh1Geschlecht.getSelectedItem().toString();
+        String ch2geschlecht = comboBoxCh2Geschlecht.getSelectedItem().toString();
+        boolean ch1magischeKraefte;
         if (checkBox1MK.isSelected()) {
-            magischeKraefte += "Magische Kraft 1";
+            ch1magischeKraefte = true;
+        } else {
+            ch1magischeKraefte = false;
+        }
+        boolean ch2magischeKraefte;
+        if (checkBox2MK.isSelected()) {
+            ch2magischeKraefte = true;
+        } else {
+            ch2magischeKraefte = false;
+        }
+
+        if (fuer.isEmpty() || ch1name.isEmpty() || ch2name.isEmpty() ||
+                ch1geschlecht.isEmpty() || ch2geschlecht.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Bitte alles ausfüllen");
+            return;
+        }
+
+        Buch buch = new Buch(fuer, gravur, cover, storyline, ch1name, ch1alter, ch1geschlecht,
+                ch1magischeKraefte, ch2name, ch2alter, ch2geschlecht, ch2magischeKraefte, preis);
+        buecherListe.add(buch);
+
+        /*String magischeKraefte = "";
+        if (checkBox1MK.isSelected()) {
+            magischeKraefte += "1";
         }
         if (checkBox2MK.isSelected()) {
             if (!magischeKraefte.isEmpty()) {
                 magischeKraefte += ", "; // Komma hinzufügen, wenn bereits eine Kraft vorhanden ist
             }
-            magischeKraefte += "Magische Kraft 2";
+            magischeKraefte += "2";
         }
 
         // Wenn keine magischen Kräfte ausgewählt wurden 
@@ -146,25 +255,41 @@ public class PersonalisiertesBuch extends JFrame {
         }
 
 
-
-
         panel.add(new JLabel("Bestellübersicht"));
-        panel.add(new JLabel("Gravur:" + gravur1 +  "." + gravur2));
-        panel.add(new JLabel("Cover:" + covertyp));
+        panel.add(new JLabel("Für:" + fuer));
+        panel.add(new JLabel("Gravur:" + gravur));
+        panel.add(new JLabel("Cover:" + cover));
         panel.add(new JLabel("Storyline:" + storyline));
-        panel.add(new JLabel("Magische Kräfte: "+ magischeKraefte));
-        panel.add(new JLabel("Preis:" + preis));
+        panel.add(new JLabel("Magische Kräfte: " + magischeKraefte));
+        panel.add(new JLabel("Preis:" + preis));*/
+        scrollpane.add(ausgabefeld);
+        panel.add(ausgabefeld);
 
         JButton schliessenButton = new JButton("Schließen");
         schliessenButton.addActionListener(e -> bestelluebersichtFrame.dispose());
         panel.add(schliessenButton);
 
         bestelluebersichtFrame.add(panel);
-        bestelluebersichtFrame.setSize(300,200);
+        bestelluebersichtFrame.setSize(700, 600);
         bestelluebersichtFrame.setLocationRelativeTo(null);
         bestelluebersichtFrame.setVisible(true);
 
+
+        ausgabefeld.setText("");
+        anzahl = 0;
+        JLabelGeschenk.setVisible(true);
+
+        for(Buch b: buecherListe){
+            ausgabefeld.setText(ausgabefeld.getText() + "\n" + b.ausgeben());
+    // wenn ein objekt hinzugefügt wird geht die anzahl im warenkorb hoch
+            warenanzahl();}
+
     }
+
+
+
+
+
     public static void main(String[] args) {
        /* SwingUtilities.invokeLater(()-> {
 
