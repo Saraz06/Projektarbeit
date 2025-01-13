@@ -49,6 +49,7 @@ public class PersonalisiertesBuch extends JFrame  {
     private JTextField textFieldCh2Alter;
     private JButton buttonReset;
 
+    //Konstruktor
     public PersonalisiertesBuch() {
         setTitle("Personalisiere dein Buch");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,6 +62,8 @@ public class PersonalisiertesBuch extends JFrame  {
         JLabelGeschenk.setVisible(false);
 
         initObjekte();
+
+        //Action Listener für Bestellen Button sodass der Warenkorb ausgegeben wirdsonst push
         buttonBestellen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,7 +72,7 @@ public class PersonalisiertesBuch extends JFrame  {
         });
 
 
-
+        //Gruppierung der Button, sodass man nur einen auswählen kann
         ButtonGroup coverGroup = new ButtonGroup();
 
         coverGroup.add(rBHard);

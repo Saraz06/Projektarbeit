@@ -33,6 +33,7 @@ public class Buch {
 
     }
 
+    // Methode für das ausgeben im Warenkorb
     public String ausgeben() {
         return " Für: " + fuer + " | Gravur: " + gravur + " | Cover: " + cover +
                 " | Storyline: " + storyline + "\n Charakter: " + ch1name + " | Alter: " + ch1alter +
