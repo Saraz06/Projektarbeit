@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class PersonalisiertesBuch extends JFrame  {
     private ArrayList<Buch> buecherListe;
     private double preis;
+    private double gesamtPreis;
     private JTextArea ausgabefeld;
 
     private JPanel panelMain;
@@ -38,7 +39,6 @@ public class PersonalisiertesBuch extends JFrame  {
     private JTextField textFieldPreis;
     private JTextField textFieldWarenkorb;
     private JButton buttonPreis;
-    private JButton buttonWarenkorb;
     private JLabel JLabelCh2Geschlecht;
     private JComboBox comboBoxGravur1;
     private JComboBox comboBoxGravur2;
@@ -48,12 +48,13 @@ public class PersonalisiertesBuch extends JFrame  {
     private JTextField textFieldCh1Alter;
     private JTextField textFieldCh2Alter;
     private JButton buttonReset;
+    private JLabel LabelPreis;
 
     //Konstruktor
     public PersonalisiertesBuch() {
         setTitle("Personalisiere dein Buch");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(700, 600);
+        setSize(620, 600);
         setContentPane(frame);
         setVisible(true);
 
@@ -63,7 +64,7 @@ public class PersonalisiertesBuch extends JFrame  {
 
         initObjekte();
 
-        //Action Listener für Bestellen Button sodass der Warenkorb ausgegeben wirdsonst push
+        //Action Listener für Bestellen Button sodass die Warenkorb Methode ausgegeben wird
         buttonBestellen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -78,14 +79,16 @@ public class PersonalisiertesBuch extends JFrame  {
         coverGroup.add(rBHard);
         coverGroup.add(rBSoft);
 
-
+        //Action Listener für Preis Button sodass die Mtgode beim klicken des Buttons ausgegeben wird
         buttonPreis.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                berechnePreis();
+
 
             }
         });
+
+        //Action Listener für Preis Button sodass die Mtgode beim klicken des Buttons ausgegeben wird
         buttonReset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,18 +97,19 @@ public class PersonalisiertesBuch extends JFrame  {
         });
     }
 
+    //Methode zur erstellung der drei objekte die in der Liste gespeichert sind
     public void initObjekte() {
-        Buch b1 = new Buch("Tobias", "T.G", "Soft Cover", "Abenteuer", "Heinrich", 56, "Männlich", true, "Hugo", 23, "Weiblich", true,"19€");
+        Buch b1 = new Buch("Tobias", "T.G", "Soft Cover", "Abenteuer", "Heinrich", 56, "männlich", true, "Hugo", 23, "männlich", true,"19€");
         buecherListe.add(b1);
-        Buch b2 = new Buch("Simon", "S.N", "Hard Cover", "Love Story", "Tom", 16, "Männlich", false, "Lena", 17, "Männlich", false, "15€");
+        gesamtPreis = gesamtPreis + 19;
+        Buch b2 = new Buch("Simon", "S.N", "Hard Cover", "Love Story", "Tom", 16, "männlich", false, "Lena", 17, "weiblich", false, "15€");
         buecherListe.add(b2);
-        Buch b3 = new Buch("Gustav", "G.G", "Soft Cover", "Comedy", "Franz", 43, "Männlich", false, "Böse Hexe", 76, "Weiblich", true, "20€");
+        gesamtPreis = gesamtPreis + 15;
+        Buch b3 = new Buch("Gustav", "G.G", "Soft Cover", "Comedy", "Franz", 43, "männlich", false, "Böse Hexe", 76, "weiblich", true, "20€");
         buecherListe.add(b3);
+        gesamtPreis = gesamtPreis + 20;
+        textFieldPreis.setText(gesamtPreis + "€");
     }
-
-
-
-
 
 
 
@@ -119,6 +123,7 @@ public class PersonalisiertesBuch extends JFrame  {
             textFieldWarenkorb.setText (String.valueOf(anzahl));
         }
 
+        //Methode zum reseten des eingetragenen sodass ein zweites Buch bestellt werden kann
         public void reset() {
             JtextFieldFuer.setText("");
             comboBoxGravur1.setSelectedIndex(0);
@@ -142,9 +147,9 @@ public class PersonalisiertesBuch extends JFrame  {
 
 
 
-
+    // Methode zum berechnen des Preises
     public void berechnePreis() {
-        double preis = 10.0;
+        preis = 10.0;
 
         if (rBHard.isSelected()) {
             preis += 5.0;
@@ -164,7 +169,9 @@ public class PersonalisiertesBuch extends JFrame  {
             preis += 3.0;
         }
 
-        textFieldPreis.setText(preis + " €");
+        gesamtPreis = gesamtPreis + preis;
+        textFieldPreis.setText(gesamtPreis + "€");
+
 
     }
 
@@ -180,9 +187,9 @@ public class PersonalisiertesBuch extends JFrame  {
         String fuer = JtextFieldFuer.getText();
         String gravur = comboBoxGravur1.getSelectedItem().toString() + "." + comboBoxGravur2.getSelectedItem().toString();
         String cover = "";
-        String preis = textFieldPreis.getText();
 
 
+        // Ausgeben einer Fehlermeldung falls kein Covertyp ausgewählt wurde
         if (rBHard.isSelected()) {
             cover = "Hard Cover";
         } else if (rBSoft.isSelected())
@@ -192,6 +199,7 @@ public class PersonalisiertesBuch extends JFrame  {
             return;
         }
 
+        // Ausgeben einer Fehlermeldung falls Nicht alles ausgewählt wurde oder Buchstaben beim Alter angegeben wurden
         String storyline = comboBoxStoryline.getSelectedItem().toString();
         String ch1name = textFieldCh1Name.getText();
         String ch2name = textFieldCh2Name.getText();
@@ -231,41 +239,19 @@ public class PersonalisiertesBuch extends JFrame  {
             ch2magischeKraefte = false;
         }
 
+
         if (fuer.isEmpty() || ch1name.isEmpty() || ch2name.isEmpty() ||
                 ch1geschlecht.isEmpty() || ch2geschlecht.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Bitte alles ausfüllen");
             return;
         }
+        berechnePreis();
 
         Buch buch = new Buch(fuer, gravur, cover, storyline, ch1name, ch1alter, ch1geschlecht,
-                ch1magischeKraefte, ch2name, ch2alter, ch2geschlecht, ch2magischeKraefte, preis);
+                ch1magischeKraefte, ch2name, ch2alter, ch2geschlecht, ch2magischeKraefte, preis + "€");
         buecherListe.add(buch);
 
-        /*String magischeKraefte = "";
-        if (checkBox1MK.isSelected()) {
-            magischeKraefte += "1";
-        }
-        if (checkBox2MK.isSelected()) {
-            if (!magischeKraefte.isEmpty()) {
-                magischeKraefte += ", "; // Komma hinzufügen, wenn bereits eine Kraft vorhanden ist
-            }
-            magischeKraefte += "2";
-        }
 
-        // Wenn keine magischen Kräfte ausgewählt wurden 
-        if (magischeKraefte.isEmpty()) {
-            magischeKraefte = "Keine";
-        }
-
-
-        panel.add(new JLabel("Bestellübersicht"));
-        panel.add(new JLabel("Für:" + fuer));
-        panel.add(new JLabel("Gravur:" + gravur));
-        panel.add(new JLabel("Cover:" + cover));
-        panel.add(new JLabel("Storyline:" + storyline));
-        panel.add(new JLabel("Magische Kräfte: " + magischeKraefte));
-        panel.add(new JLabel("Preis:" + preis));*/
-        scrollpane.add(ausgabefeld);
         panel.add(ausgabefeld);
 
         JButton schliessenButton = new JButton("Schließen");
@@ -286,6 +272,7 @@ public class PersonalisiertesBuch extends JFrame  {
             ausgabefeld.setText(ausgabefeld.getText() + "\n" + b.ausgeben());
     // wenn ein objekt hinzugefügt wird geht die anzahl im warenkorb hoch
             warenanzahl();}
+        ausgabefeld.setText(ausgabefeld.getText() + "\n                                                     Gesamtpreis: "+ gesamtPreis+"€");
 
     }
 

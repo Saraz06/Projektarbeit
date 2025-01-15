@@ -43,7 +43,7 @@
       </component>
       <component id="e91a" class="javax.swing.JLabel" binding="JLabelCh1Name">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="4" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="4" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-16777216"/>
@@ -60,7 +60,7 @@
       </component>
       <component id="ffc4a" class="javax.swing.JLabel" binding="JLabelCh1Alter">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-16777216"/>
@@ -69,7 +69,7 @@
       </component>
       <component id="d7a1f" class="javax.swing.JLabel" binding="JLabelCh1Geschlecht">
         <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-16777216"/>
@@ -84,12 +84,13 @@
           <model>
             <item value="weiblich"/>
             <item value="männlich"/>
+            <item value="divers"/>
           </model>
         </properties>
       </component>
       <component id="18be0" class="javax.swing.JLabel" binding="JLabelFuer">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-16777216"/>
@@ -98,7 +99,7 @@
       </component>
       <component id="2514a" class="javax.swing.JLabel" binding="JLabelGravur">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-16777216"/>
@@ -119,7 +120,7 @@
       </component>
       <component id="fdbba" class="javax.swing.JLabel" binding="JLabelCh2">
         <constraints>
-          <grid row="4" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
+          <grid row="4" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="4" anchor="2" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="72" height="39"/>
           </grid>
         </constraints>
@@ -143,7 +144,7 @@
       </component>
       <component id="9626e" class="javax.swing.JButton" binding="buttonBestellen">
         <constraints>
-          <grid row="12" column="5" row-span="1" col-span="2" vsize-policy="4" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false">
+          <grid row="12" column="5" row-span="1" col-span="2" vsize-policy="4" hsize-policy="7" anchor="6" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="20" height="10"/>
           </grid>
         </constraints>
@@ -181,22 +182,6 @@
         </constraints>
         <properties>
           <editable value="false"/>
-        </properties>
-      </component>
-      <component id="a224" class="javax.swing.JButton" binding="buttonPreis">
-        <constraints>
-          <grid row="10" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Preis"/>
-        </properties>
-      </component>
-      <component id="6f9b2" class="javax.swing.JButton" binding="buttonWarenkorb">
-        <constraints>
-          <grid row="11" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Warenkorb"/>
         </properties>
       </component>
       <component id="1670" class="javax.swing.JComboBox" binding="comboBoxGravur1">
@@ -304,6 +289,7 @@
           <model>
             <item value="weiblich"/>
             <item value="männlich"/>
+            <item value="divers"/>
           </model>
         </properties>
       </component>
@@ -313,7 +299,7 @@
         </constraints>
         <properties>
           <foreground color="-16777216"/>
-          <text value="Name         "/>
+          <text value="Name "/>
         </properties>
       </component>
       <component id="89af8" class="javax.swing.JLabel" binding="JLabelCh2Alter">
@@ -322,7 +308,7 @@
         </constraints>
         <properties>
           <foreground color="-16777216"/>
-          <text value="Alter           "/>
+          <text value="Alter "/>
         </properties>
       </component>
       <component id="3fab1" class="javax.swing.JLabel" binding="JLabelCh2Geschlecht">
@@ -332,19 +318,6 @@
         <properties>
           <foreground color="-16777216"/>
           <text value="Geschlecht"/>
-        </properties>
-      </component>
-      <component id="f7ab7" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="6" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="true"/>
-          <font size="16" style="1"/>
-          <foreground color="-16777216"/>
-          <text value="personalisiere dein Buch"/>
         </properties>
       </component>
       <component id="b8bf0" class="javax.swing.JCheckBox" binding="checkBox1MK">
@@ -376,19 +349,10 @@
       <component id="e562" class="javax.swing.JTextField" binding="textFieldCh2Alter">
         <constraints>
           <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
+            <preferred-size width="200" height="-1"/>
           </grid>
         </constraints>
         <properties/>
-      </component>
-      <component id="af41b" class="javax.swing.JButton" binding="buttonReset">
-        <constraints>
-          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <foreground color="-7340026"/>
-          <text value="Reset"/>
-        </properties>
       </component>
       <component id="7a26c" class="javax.swing.JTextArea" binding="ausgabefeld">
         <constraints>
@@ -398,6 +362,47 @@
           <background color="-408577"/>
           <editable value="false"/>
           <foreground color="-16777216"/>
+        </properties>
+      </component>
+      <component id="f7ab7" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="6" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="true"/>
+          <font size="16" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="       written 4 you"/>
+        </properties>
+      </component>
+      <component id="e5a9a" class="javax.swing.JLabel" binding="LabelPreis">
+        <constraints>
+          <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Anzahl"/>
+        </properties>
+      </component>
+      <component id="38609" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-408577"/>
+          <foreground color="-16777216"/>
+          <text value="Preis"/>
+        </properties>
+      </component>
+      <component id="af41b" class="javax.swing.JButton" binding="buttonReset">
+        <constraints>
+          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-7340026"/>
+          <text value="Reset"/>
         </properties>
       </component>
     </children>
