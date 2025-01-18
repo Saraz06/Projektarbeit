@@ -8,3 +8,5 @@ Nutzung:
     Die Storyline wird ausgewählt, und es wird entschieden, ob die Charaktere magische Fähigkeiten besitzen sollen.
     Das Cover wird ausgesucht.
     Der Benutzer muss nur noch auf „Bestellen“ klicken.
+
+    https://github.com/Saraz06/Projektarbeit/blob/master/src/Projektarbeit/PersonalisiertesBuch.java
