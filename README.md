@@ -1,3 +1,4 @@
+Unsere Gruppe hat ein Proframm geschrieben, mit dem man sein eigenes Buch personalisieren kann.
 Dieses Projekt ermöglicht es, ein Buch individuell anzupassen.
 Benutzer können bestimmen, welche Namen die beiden Charaktere tragen sollen, ob diese magische Fähigkeiten haben, welches Alter sie haben und welche Grund-Storyline das Buch haben soll. Außerdem kann der Benutzer entscheiden, ob das Buch ein Softcover oder Hardcover ist und ob die Initialen auf dem Cover hinzugefügt werden sollen.
 
