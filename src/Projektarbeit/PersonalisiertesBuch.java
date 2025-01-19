@@ -169,7 +169,6 @@ public class PersonalisiertesBuch extends JFrame  {
         gesamtPreis = gesamtPreis + preis;
         textFieldPreis.setText(gesamtPreis + "€");
 
-
     }
 
     // Methode die einerseits die Bestellübersicht im Warenkorb ausgibt kombiniert mit der Ausgabe
