@@ -15,6 +15,7 @@ public class Buch {
     private boolean ch2magischeKraefte;
     private String preis;
 
+    // Konstruktor
     public Buch(String fuer, String gravur, String cover, String storyline, String ch1name, double ch1alter, String ch1geschlecht,
                 boolean ch1magischeKraefte, String ch2name, double ch2alter, String ch2geschlecht, boolean ch2magischeKraefte, String preis) {
         this.fuer = fuer;

@@ -38,7 +38,6 @@ public class PersonalisiertesBuch extends JFrame  {
     private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
     private JTextField textFieldWarenkorb;
-    private JButton buttonPreis;
     private JLabel JLabelCh2Geschlecht;
     private JComboBox comboBoxGravur1;
     private JComboBox comboBoxGravur2;
@@ -58,13 +57,15 @@ public class PersonalisiertesBuch extends JFrame  {
         setContentPane(frame);
         setVisible(true);
 
+        //Erstellen der ArrayList
         buecherListe = new ArrayList<>();
 
         JLabelGeschenk.setVisible(false);
 
         initObjekte();
 
-        //Action Listener für Bestellen Button sodass die Warenkorb Methode ausgegeben wird
+        //Action Listener für Bestellen Button sodass die Warenkorb Methode beim Klicken des Buttons
+        //ausgeführt wird
         buttonBestellen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,23 +73,14 @@ public class PersonalisiertesBuch extends JFrame  {
             }
         });
 
-
         //Gruppierung der Button, sodass man nur einen auswählen kann
         ButtonGroup coverGroup = new ButtonGroup();
 
         coverGroup.add(rBHard);
         coverGroup.add(rBSoft);
 
-        //Action Listener für Preis Button sodass die Mtgode beim klicken des Buttons ausgegeben wird
-        buttonPreis.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-
-            }
-        });
-
-        //Action Listener für Preis Button sodass die Mtgode beim klicken des Buttons ausgegeben wird
+        //Action Listener für Preis Button sodass die Methode beim klicken des Buttons ausgeführt wird
         buttonReset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,23 +89,28 @@ public class PersonalisiertesBuch extends JFrame  {
         });
     }
 
-    //Methode zur erstellung der drei objekte die in der Liste gespeichert sind
+    //Methode zur Erstellung der drei Objekte die in der Liste gespeichert sind
     public void initObjekte() {
-        Buch b1 = new Buch("Tobias", "T.G", "Soft Cover", "Abenteuer", "Heinrich", 56, "männlich", true, "Hugo", 23, "männlich", true,"19€");
+        Buch b1 = new Buch("Tobias", "T.G", "Soft Cover", "Abenteuer", "Heinrich", 56, "männlich",
+                true, "Hugo", 23, "männlich", true,"19€");
         buecherListe.add(b1);
         gesamtPreis = gesamtPreis + 19;
-        Buch b2 = new Buch("Simon", "S.N", "Hard Cover", "Love Story", "Tom", 16, "männlich", false, "Lena", 17, "weiblich", false, "15€");
+        Buch b2 = new Buch("Simon", "S.N", "Hard Cover", "Love Story", "Tom", 16, "männlich",
+                false, "Lena", 17, "weiblich", false, "15€");
         buecherListe.add(b2);
         gesamtPreis = gesamtPreis + 15;
-        Buch b3 = new Buch("Gustav", "G.G", "Soft Cover", "Comedy", "Franz", 43, "männlich", false, "Böse Hexe", 76, "weiblich", true, "20€");
+        Buch b3 = new Buch("Gustav", "G.G", "Soft Cover", "Comedy", "Franz", 43, "männlich",
+                false, "Böse Hexe", 76, "weiblich", true, "20€");
         buecherListe.add(b3);
+
         gesamtPreis = gesamtPreis + 20;
         textFieldPreis.setText(gesamtPreis + "€");
     }
 
 
 
-        //Anzahl an bestellten Bücher (Warenkorb)
+        //Anzahl an bestellten Büchern (Warenkorb)
+        //die Warenanzahl erhöht sich pro bestelltes Buch um Eins
         int anzahl = 0;
 
 
@@ -123,7 +120,7 @@ public class PersonalisiertesBuch extends JFrame  {
             textFieldWarenkorb.setText (String.valueOf(anzahl));
         }
 
-        //Methode zum reseten des eingetragenen sodass ein zweites Buch bestellt werden kann
+        //Methode zum Zurücksetzen des Eingetragenen sodass ein zweites Buch bestellt werden kann
         public void reset() {
             JtextFieldFuer.setText("");
             comboBoxGravur1.setSelectedIndex(0);
@@ -175,19 +172,17 @@ public class PersonalisiertesBuch extends JFrame  {
 
     }
 
-
+    // Methode die einerseits die Bestellübersicht im Warenkorb ausgibt kombiniert mit der Ausgabe
+    // von Fehlermeldungennbei ungültigen Eingaben
     public void zeigeWarenkorb() {
         JFrame bestelluebersichtFrame = new JFrame("Warenkorb");
 
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        JScrollPane scrollpane = new JScrollPane();
-        panel.add(scrollpane);
         String fuer = JtextFieldFuer.getText();
         String gravur = comboBoxGravur1.getSelectedItem().toString() + "." + comboBoxGravur2.getSelectedItem().toString();
         String cover = "";
-
 
         // Ausgeben einer Fehlermeldung falls kein Covertyp ausgewählt wurde
         if (rBHard.isSelected()) {
@@ -199,7 +194,7 @@ public class PersonalisiertesBuch extends JFrame  {
             return;
         }
 
-        // Ausgeben einer Fehlermeldung falls Nicht alles ausgewählt wurde oder Buchstaben beim Alter angegeben wurden
+        // Ausgeben einer Fehlermeldung falls nicht alles ausgewählt wurde oder Buchstaben beim Alter angegeben wurden
         String storyline = comboBoxStoryline.getSelectedItem().toString();
         String ch1name = textFieldCh1Name.getText();
         String ch2name = textFieldCh2Name.getText();
@@ -247,10 +242,11 @@ public class PersonalisiertesBuch extends JFrame  {
         }
         berechnePreis();
 
+        //Erstellen eines Ojektes mit den manuellen Daten der GUI
         Buch buch = new Buch(fuer, gravur, cover, storyline, ch1name, ch1alter, ch1geschlecht,
                 ch1magischeKraefte, ch2name, ch2alter, ch2geschlecht, ch2magischeKraefte, preis + "€");
+        // Hinzufügen der Objekte zur ArrayList
         buecherListe.add(buch);
-
 
         panel.add(ausgabefeld);
 
@@ -263,7 +259,6 @@ public class PersonalisiertesBuch extends JFrame  {
         bestelluebersichtFrame.setLocationRelativeTo(null);
         bestelluebersichtFrame.setVisible(true);
 
-
         ausgabefeld.setText("");
         anzahl = 0;
         JLabelGeschenk.setVisible(true);
@@ -272,25 +267,14 @@ public class PersonalisiertesBuch extends JFrame  {
             ausgabefeld.setText(ausgabefeld.getText() + "\n" + b.ausgeben());
     // wenn ein objekt hinzugefügt wird geht die anzahl im warenkorb hoch
             warenanzahl();}
-        ausgabefeld.setText(ausgabefeld.getText() + "\n                                                     Gesamtpreis: "+ gesamtPreis+"€");
-
+        ausgabefeld.setText(ausgabefeld.getText() + "\n                                                                                                                                                                           Gesamtpreis: "+ gesamtPreis+"€");
     }
 
 
 
 
-
+    // Main Methode
     public static void main(String[] args) {
-       /* SwingUtilities.invokeLater(()-> {
-
-            JFrame frame = new JFrame("Personalisierte Buchpreisberechnung");
-            PersonalisiertesBuch personalisiertesBuch = new PersonalisiertesBuch();
-
-            frame.setContentPane(personalisiertesBuch.panelMain);
-
-            frame.pack();
-            frame.setVisible(true);
-        });*/
         new PersonalisiertesBuch();
     }
 
