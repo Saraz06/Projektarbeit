@@ -1,13 +1,31 @@
-Unsere Gruppe hat ein Proframm geschrieben, mit dem man sein eigenes Buch personalisieren kann.
-Dieses Projekt ermöglicht es, ein Buch individuell anzupassen.
-Benutzer können bestimmen, welche Namen die beiden Charaktere tragen sollen, ob diese magische Fähigkeiten haben, welches Alter sie haben und welche Grund-Storyline das Buch haben soll. Außerdem kann der Benutzer entscheiden, ob das Buch ein Softcover oder Hardcover ist und ob die Initialen auf dem Cover hinzugefügt werden sollen.
+**Unsere Gruppe hat ein Proframm geschrieben, mit dem man sein eigenes Buch personalisieren kann.**
 
-Nutzung:
+  **Funktionen:**
+  
+  *Charakteranpassung*:
+  - Name, Alter und Geschlecht der Hauptcharaktere können individuell festgelegt werden.
+  - Optionale magische Kräfte für Charaktere.
+
+- *Geschichtenauswahl*:
+  - Wählen Sie aus verschiedenen Storylines wie Abenteuer, Love Story oder Comedy.
+
+- *Buchcover-Typ*:
+  - Auswahl zwischen Hard- oder Softcover.
+
+- *Gravur*:
+  - Fügen Sie eine persönliche Gravur hinzu.
+
+- *Preisberechnung*
+  - Dynamische Preisberechnung basierend auf den gewählten Optionen.
+
+- *Warenkorbfunktion*
+  - Übersicht über alle bestellten Bücher.
+  - Anzeige des Gesamtpreises im Warenkorb.
+ 
+    **Nutzung**
 
     Der Benutzer öffnet die Anwendung.
     Die Namen und das Alter der Charaktere werden eingegeben.
     Die Storyline wird ausgewählt, und es wird entschieden, ob die Charaktere magische Fähigkeiten besitzen sollen.
     Das Cover wird ausgesucht.
     Der Benutzer muss nur noch auf „Bestellen“ klicken.
-
-    https://github.com/Saraz06/Projektarbeit/blob/master/src/Projektarbeit/PersonalisiertesBuch.java
