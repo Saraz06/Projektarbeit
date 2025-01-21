@@ -38,7 +38,6 @@ berechnePreis()
 
     Zählt die Anzahl der im Warenkorb befindlichen Bücher und aktualisiert die Anzeige.
 
-![image](https://github.com/user-attachments/assets/8382ddae-2c65-4f36-997a-83919ebf81ce)
 
     zeigeWarenkorb()
 
@@ -47,3 +46,7 @@ berechnePreis()
         Fehlermeldungen, falls Felder leer sind oder falsche Eingaben (z. B. nicht-numerisches Alter) gemacht werden.
     Fügt das aktuelle Buch zur buecherListe hinzu.
     Aktualisiert die Warenkorbanzeige.
+
+![image](https://github.com/user-attachments/assets/98767daa-e1f2-4135-850f-7daaf6f4e75e)
+![image](https://github.com/user-attachments/assets/12d70831-eb67-4b5a-bbff-ae811893e229)
+
