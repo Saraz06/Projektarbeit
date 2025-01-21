@@ -20,6 +20,7 @@ Um ein weiteres Buch zu bestellen, drücken Sie auf den Reset-Button.
 
 
 **Funktionen und Methoden**
+
 initObjekte()
 
     Erstellt drei Standardbücher, die der internen buecherListe hinzugefügt werden.
