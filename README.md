@@ -38,6 +38,8 @@ berechnePreis()
 
     Zählt die Anzahl der im Warenkorb befindlichen Bücher und aktualisiert die Anzeige.
 
+![image](https://github.com/user-attachments/assets/8382ddae-2c65-4f36-997a-83919ebf81ce)
+
     zeigeWarenkorb()
 
     Zeigt die Bestellübersicht (Warenkorb) in einem neuen Fenster.
