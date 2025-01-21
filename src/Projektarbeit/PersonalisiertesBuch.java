@@ -33,7 +33,7 @@ public class PersonalisiertesBuch extends JFrame  {
     private JLabel JLabelStoryline;
     private JLabel JLabelFuer;
     private JComboBox comboBoxStoryline;
-    private JButton  buttonBestellen;
+    private JButton buttonHinzufuegen;
     private JLabel JLabelGeschenk;
     private JTextField JtextFieldFuer;
     private JTextField textFieldPreis;
@@ -66,7 +66,7 @@ public class PersonalisiertesBuch extends JFrame  {
 
         //Action Listener für Bestellen Button sodass die Warenkorb Methode beim Klicken des Buttons
         //ausgeführt wird
-        buttonBestellen.addActionListener(new ActionListener() {
+        buttonHinzufuegen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 zeigeWarenkorb();
